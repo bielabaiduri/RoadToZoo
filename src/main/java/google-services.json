@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "161873478136",
+    "firebase_url": "https://road2zoo-203908.firebaseio.com",
+    "project_id": "road2zoo-203908",
+    "storage_bucket": "road2zoo-203908.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161873478136:android:7af9682ed57c4573",
+        "android_client_info": {
+          "package_name": "com.splash.user.event"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161873478136-e2vd49gtuhbk979eounclijmt17nl8p4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.splash.user.event",
+            "certificate_hash": "10508586b479c9079c65d889e11d85c9060592d8"
+          }
+        },
+        {
+          "client_id": "161873478136-gqn5s8mabqonpe9uejnqiajlebs5vva8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcx4P6l2LqBQasCv57PbFcl-g9zOalpTI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161873478136-gqn5s8mabqonpe9uejnqiajlebs5vva8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

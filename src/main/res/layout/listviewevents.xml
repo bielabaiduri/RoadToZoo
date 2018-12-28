@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativelayoutlisteventss"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtEveName"
+        android:layout_width="151dp"
+        android:layout_height="51dp"
+        android:layout_below="@+id/txtVwEveDate"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-22dp"
+
+        android:text="Hello World!" />
+
+    <TextView
+        android:id="@+id/txtVwEveDate"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVwEveTime"
+        android:layout_marginStart="-164dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/txtVwEveTime"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtVwEveTime"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtVwEvePlace"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVwEveDesc"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/txtEveName"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtVwEveDesc"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVwEveHandle"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/txtEveName"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtVwEveHandle"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtVwEveDate"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@+id/txtEveName"
+        android:layout_weight="1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtVwEveTarget"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="127dp"
+        android:layout_toEndOf="@+id/txtEveName"
+        android:layout_weight="1"
+        android:text="TextView" />
+</RelativeLayout>
