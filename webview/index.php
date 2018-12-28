@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Road To Zoo | Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+<div id="page">
+  <div id="header"> <a href="#" id="logo"><img src="images/logo.jpg" alt=""/></a>
+    <ul>
+      <li class="first">
+        <h2><a href="#">Live</a></h2>
+        <span>Have fun in your visit</span> </li>
+      <li>
+        <h2><a href="#">Love</a></h2>
+        <span>Donate for the animals</span> </li>
+      <li>
+        <h2><a href="#">Learn</a></h2>
+        <span>Get to know the animals</span> </li>
+    </ul>
+    <a href="login.php">Buy Tickets</a>
+    <ul id="navigation">
+      <li id="link1" class="selected"><a href="index.php">Home</a></li>
+      <li id="link2"><a href="package.php">Packages</a></li>
+      <li id="link4"><a href="events.php">Events</a></li>
+      <li id="link5"><a href="login.php">Member</a></li>
+      <li id="link6"><a href="login_staff.php">Staff</a></li>
+    </ul>
+
+    <img src="images/lion-family.jpg" alt=""/>
+    <div>
+      <h1>Special Events:</h1>
+       <?php 
+            include "includes/dbconnect.php";
+            date_default_timezone_set("Asia/Kuala_Lumpur");
+            $today_event = date('Y-m-d');
+            $sql_eventa = "SELECT * FROM event WHERE Eventdate = '$today_event' LIMIT 1";                
+            $result_eventa = mysqli_query($dbc,$sql_eventa) or die('Query failed. ' . mysqli_error());
+            $row = mysqli_fetch_assoc($result_eventa);     
+        ?>
+
+        <?php if(mysqli_num_rows($result_eventa)!=0):?>
+        <p><a href="#"><span><?php echo date('d M Y',strtotime($row['Eventdate'])) ?> | <?php echo $row['Eventtime']; ?></span></a> | <?php echo $row['Eventname']." | "."Place : ".$row['Eventplace']; ?> </p>
+        <?php else:?>
+         <p>No Event For Today</p>
+        <?php endif?>
+    </div>
+  </div>
+  <div id="content">
+    <div id="featured">
+      <h2>Meet our Animals</h2>
+      <ul>
+        <li class="first"> <a href="#"><img src="images/penguin.jpg" alt=""/></a> <a href="#">Duis laoreet</a> </li>
+        <li> <a href="#"><img src="images/elephant.jpg" alt=""/></a> <a href="#">Curabitur</a> </li>
+        <li> <a href="#"><img src="images/owl.jpg" alt=""/></a> <a href="#">Adipiscing</a> </li>
+        <li> <a href="#"><img src="images/butterfly.jpg" alt=""/></a> <a href="#">Sed Volutpat</a> </li>
+        <li> <a href="#"><img src="images/turtle.jpg" alt=""/></a> <a href="#">Nulla lobortis</a> </li>
+        <li> <a href="#"><img src="images/snake.jpg" alt=""/></a> <a href="#">Suspendisse</a> </li>
+        <li> <a href="#"><img src="images/gorilla.jpg" alt=""/></a> <a href="#">Tincidunt</a> </li>
+      </ul>
+    </div>
+    <div class="section1">
+      <h2>Events</h2>
+      <ul id="article">
+        <?php 
+
+            date_default_timezone_set("Asia/Kuala_Lumpur");
+            $today = date('Y-m-d');
+            $sql_event = " SELECT * FROM event WHERE Eventdate >= '$today' ORDER BY Eventdate  LIMIT 3 ";                
+            $result_event = mysqli_query($dbc,$sql_event) or die('Query failed. ' . mysqli_error());
+
+            while($row = mysqli_fetch_assoc($result_event)) {?> 
+
+            <li> <a href="#"><span><?php echo date('d M Y',strtotime($row['Eventdate'])) ?> | <?php echo $row['Eventtime']; ?></span></a>
+              <p><?php echo $row['Eventname']." | ".$row['Description']." | "."Place : ".$row['Eventplace']; ?></p>
+              <p><?php echo "Handle By : ".$row['Handleby']." | "."Target To : ".$row['Targetcus'] ?></p>
+            </li>
+
+            <?php } 
+          
+        ?>
+      </ul>
+    </div>
+  
+    <div class="section3">
+      <h2>Connect</h2>
+      <a href="#" id="email">Email Us</a> <a href="#" id="facebook">Facebook</a> <a href="#" id="twitter">Twitter</a>
+      <img src="images/penguin2.jpg" alt=""/> </div>
+  </div>
+  <div id="footer">
+    <div> <a href="#" class="logo"><img src="images/animal-kingdom.jpg" alt=""/></a>
+      <div>
+        <p>Road To Zoo</p>
+        <span>03-89531111 / 2222</span> <span>email@roadtozoo.com</span> </div>
+      <ul class="navigation">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="package.php">Packages</a></li>
+        <li><a href="events.php">Events</a></li>
+      </ul>
+      <p>Copyright &copy; <?php echo date('Y')?> <a href="#">Road To Zoo</a> - All Rights Reserved </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
